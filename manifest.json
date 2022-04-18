@@ -1,0 +1,19 @@
+{
+  "name": "Twitch Get Cookie",
+  "description": "Dump Twitch Cookie",
+  "version": "0.1",
+  "manifest_version": 3,
+  "minimum_chrome_version": "92",
+  "host_permissions": [
+    "*://*.twitch.tv/"
+  ],
+  "permissions": [
+    "cookies"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
