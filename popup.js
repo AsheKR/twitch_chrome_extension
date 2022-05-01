@@ -33,13 +33,9 @@ document.addEventListener("DOMContentLoaded", function(){
 	document.getElementById('heroku-url-submit').addEventListener("click", function() {
 		chrome.runtime.sendMessage({ command: "GetCookies"}, function(cookies) {
 			let herokuUrl = document.getElementById('heroku-url').value;
-			fetch(herokuUrl, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(cookies)})
-				.then(res => {
-					console.log(res)
-				})
-				.catch(err => {
-					console.log(err)
-				})
+			chrome.runtime.sendMessage({ command: "SendCookies", url: herokuUrl, cookies: cookies }, function(response) {
+				console.log(response)
+			});
 		});
 	});
 	chrome.runtime.sendMessage({ command: "GetCookies"}, getCookies);
