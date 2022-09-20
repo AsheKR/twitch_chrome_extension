@@ -5,9 +5,12 @@
   "manifest_version": 3,
   "minimum_chrome_version": "92",
   "host_permissions": [
-    "*://*.twitch.tv/"
+    "*://*.twitch.tv/",
+    "http://localhost:8080/*"
   ],
   "permissions": [
+    "identity",
+    "storage",
     "cookies",
     "tabs"
   ],
